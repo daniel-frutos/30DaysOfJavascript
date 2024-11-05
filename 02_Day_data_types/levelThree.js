@@ -32,3 +32,12 @@ for (const [word, count] of Object.entries(wordCounts)) {
 console.log(`Most frequent word: '${mostFrequentWord}' with ${maxCount} occurrences`);
 
 //Calculate the total annual income of the person by extracting the numbers from the following text. 'He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.'
+const text = 'He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.';
+const numbers = text.match(/\d+/g).map(Number);
+const monthlySalary = numbers[0] * 12;    
+const annualBonus = numbers[1];          
+const monthlyCourses = numbers[2] * 12;  
+
+const totalAnnualIncome = monthlySalary + annualBonus + monthlyCourses;
+
+console.log(`Total annual income: ${totalAnnualIncome} euros`);
